@@ -6,84 +6,47 @@
   <title>Portofolio Audry Raihan</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style>
-
     *{
       scroll-behavior: smooth;
+      scroll-padding-top: 70px;
     }
-    
    :root {
-  --bg-color: #0f172a;
-  --text-color: #e2e8f0;
-  --accent-color: #38bdf8;
-  --card-bg: #1e293b;
-  --transition: 0.3s ease;
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --accent-color: #38bdf8;
+    --card-bg: #1e293b;
+    --transition: 0.3s ease;
+  }
 
-  .download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.2rem;
-  padding: 0.8rem 1.4rem;
-  background: var(--accent-color);
-  color: #fff;
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    transition: background var(--transition), color var(--transition);
+  }
 
-/* === Scroll Animation with Delay === */
-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+  /* === Scroll Animation === */
+  section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
 
-/* Ketika muncul */
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-/* Delay berbeda per section */
-#about.visible {
-  transition-delay: 0.1s;
-}
-#skills.visible {
-  transition-delay: 0.3s;
-}
-#projects.visible {
-  transition-delay: 0.5s;
-}
-#contact.visible {
-  transition-delay: 0.7s;
-}
+  #about.visible { transition-delay: 0.1s; }
+  #skills.visible { transition-delay: 0.3s; }
+  #tools.visible { transition-delay: 0.4s; }
+  #projects.visible { transition-delay: 0.5s; }
+  #contact.visible { transition-delay: 0.7s; }
 
-
-}
-
-.download-btn i {
-  font-size: 1.2rem;
-}
-
-.download-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px var(--accent-color);
-}
-
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  margin: 0;
-  transition: background var(--transition), color var(--transition);
-
-}
-
-/* ================= HEADER ================= */
-header {
+  /* ================= HEADER ================= */
+  header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -92,69 +55,58 @@ header {
   text-align: center;
   padding: 3rem 1rem 2rem;
   animation: fadeIn 1.5s ease;
-}
+  }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
 
-header .tagline {
-  font-size: 1rem;
-  color: #94a3b8;
-}
+  header .tagline {
+    font-size: 1rem;
+    color: #94a3b8;
+  }
 
-#avatar {
-  flex-shrink: 0;
-  width: 160px;
-  height: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
+  #avatar {
+    flex-shrink: 0;
+    width: 160px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
 
-#foto {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  #foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-body.light .download-btn {
-  background: #2563eb;
-  color: #fff;
-}
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding: 0.8rem 1.4rem;
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
 
+  .download-btn i {
+    font-size: 1.2rem;
+  }
 
-#contact {
-  text-align: center;
-  margin-top: 2rem;
-}
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--accent-color);
+  }
 
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
-
-.contact-icons a {
-  color: #cbd5e1;
-  font-size: 2.4rem;
-  transition: transform 0.3s ease;
-}
-
-.contact-icons a:hover {
-  transform: scale(1.2);
-}
-
-/* Warna brand */
-.bxs-envelope { color: #EA4335; }
-.bxl-linkedin-square { color: #0A66C2; }
-.bxl-whatsapp-square { color: #25D366; }
-
-
-/* ================= NAVBAR ================= */
-nav {
+  /* ================= NAVBAR ================= */
+  nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -164,206 +116,244 @@ nav {
   top: 0;
   backdrop-filter: blur(6px);
   z-index: 10;
-}
+  }
 
-nav a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition);
-}
+  nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
 
-nav a:hover {
-  color: var(--accent-color);
-}
+  nav a:hover {
+    color: var(--accent-color);
+  }
 
-#about {
+  #about {
   margin-top: 80px;
 }
 
-/* ================= CONTENT ================= */
-section {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-  animation: fadeInUp 1s ease;
-  scroll-margin-top: 100px;
-}
-
-h2 {
-  border-left: 4px solid var(--accent-color);
-  padding-left: 0.7rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-p, li {
-  color: #cbd5e1;
-  text-align: justify;
-}
-
-.skills-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.8rem;
-}
-
-.skills-list li {
-  background: var(--card-bg);
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform var(--transition);
-}
-
-.skills-list li:hover {
-  transform: translateY(-3px);
-}
-
-.project-card {
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-top: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: transform var(--transition);
-}
-
-.project-card:hover {
-  transform: scale(1.02);
-}
-
-.project-card a{
-  color: #38bdf8;
-}
-
-.project-card p{
-  text-align: justify;
-}
-
-
-/* ================= FOOTER ================= */
-/*footer {
-  text-align: center;
-  padding: 2rem;
-  color: #94a3b8;
-  border-top: 1px solid #334155;
-}
-
-/* ================= TOGGLE ================= */
-.theme-toggle {
-  position: fixed;
-  z-index: 99;
-  top: 1rem;
-  right: 1rem;
-  background: var(--card-bg);
-  color: var(--text-color);
-  border: none;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background var(--transition), color var(--transition);
-}
-
-.theme-toggle:hover {
-  background: #334155;
-}
-
-/* ================= ANIMATIONS ================= */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  /* ================= CONTENT ================= */
+  section {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
+  h2 {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 0.7rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  p, li {
+    color: #cbd5e1;
+    text-align: justify;
+  }
+
+  /* ================= SKILLS ================= */
+  .skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .skills-list li {
+    background: var(--card-bg);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
     text-align: center;
-    gap: 1.5rem;
-    padding: 2.5rem 1rem;
+    transition: transform var(--transition);
   }
 
-  header h1 {
-    font-size: 2rem;
+  .skills-list li:hover {
+    transform: translateY(-3px);
   }
 
-  #avatar {
-    width: 140px;
-    height: 180px;
+  /* ================= TOOLS ================= */
+  .tools-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
   }
-}
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.6rem;
+  .tools-list li {
+    background: var(--card-bg);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
   }
-  .tagline {
-    font-size: 0.9rem;
+
+  .tools-list li i {
+    font-size: 1.4rem;
+    color: var(--accent-color);
   }
-  #avatar {
-    width: 120px;
-    height: 160px;
+
+  .tools-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px var(--accent-color);
   }
+
+  /* ================= PROJECTS ================= */
+  .project-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform var(--transition);
+  }
+
+  .project-card:hover {
+    transform: scale(1.02);
+  }
+
+  .project-card a{
+    color: #38bdf8;
+  }
+
+  /* ================= CONTACT ================= */
+  #contact {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  font-size: 3rem;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.contact-icons a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+/* Animasi fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
-/* ================= LIGHT MODE ================= */
-body.light {
-  --bg-color: #f9fafb;
-  --text-color: #0f172a;  /* hitam pekat */
-  --accent-color: #2563eb;
-  --card-bg: #e2e8f0; /* abu muda */
-}
+  .bxs-envelope { color: #EA4335; }
+  .bxl-linkedin-square { color: #0A66C2; }
+  .bxl-whatsapp-square { color: #25D366; }
 
-body.light p,
-body.light li,
-body.light footer {
-  color: #1f2937; /* teks abu tua agar tetap kontras */
-}
+  /* ================= TOGGLE ================= */
+  .theme-toggle {
+    position: fixed;
+    z-index: 99;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+  }
 
-body.light nav {
-  background: rgba(226, 232, 240, 0.9);
-}
+  .theme-toggle:hover {
+    background: #334155;
+  }
 
-body.light .theme-toggle {
-  background: #e2e8f0;
-  color: #0f172a;
-}
+  /* ================= LIGHT MODE ================= */
+  body.light {
+    --bg-color: #f9fafb;
+    --text-color: #0f172a;
+    --accent-color: #2563eb;
+    --card-bg: #e2e8f0;
+  }
 
+  body.light p,
+  body.light li {
+    color: #1f2937;
+  }
+
+  body.light nav {
+    background: rgba(226, 232, 240, 0.9);
+  }
+
+  body.light .theme-toggle {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  body.light .tools-list li {
+    background: #e2e8f0;
+    color: #1f2937;
+  }
+
+  body.light .tools-list li i {
+    color: #2563eb;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    #avatar {
+      width: 140px;
+      height: 180px;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
   </style>
 </head>
+
+
 <body>
   <button class="theme-toggle" id="themeToggle" title="Ganti mode">🌙</button>
 
   <header>
     <div>
- <h1>Audry Raihan</h1>
-    <p class="tagline">Fresh Graduate Teknik Informatika</p>
+      <h1>Audry Raihan</h1>
+      <p class="tagline">Fresh Graduate Informatics Engineering</p>
     </div>
     <div id="avatar">
-        <img src="assets\pp.jpg" alt="" id="foto">
+      <img src="assets/pp.jpg" alt="" id="foto">
     </div>
-   </header>
+  </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#tools">Tools</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -373,10 +363,9 @@ body.light .theme-toggle {
     <p>
       I’m a graduate in Informatics Engineering from UIN Bandung with an interest in various non-coding roles within the IT field. I have strong analytical, communication, and attention-to-detail skills, and I’m committed to continuous learning and professional growth in technology. Experienced in business process analysis, process modeling (BPMN, UML), manual testing, and project documentation. Detail-oriented, adaptable, and eager to grow in non-coding IT roles such as IT Support, Technical Writer, Data Analyst, and similar fields.
     </p>
-    
-    <a href="assets\Resume Audry Raihan.pdf" download class="download-btn">
-    <i class='bx bx-download'></i> Download Resume
-  </a>
+    <a href="assets/Resume Audry Raihan.pdf" download class="download-btn">
+      <i class='bx bx-download'></i> Download Resume
+    </a>
   </section>
 
   <section id="skills">
@@ -384,10 +373,24 @@ body.light .theme-toggle {
     <ul class="skills-list">
       <li>Software Testing</li>
       <li>Troubleshooting</li>
-      <li>Basic Networking</li>
+      <li>Base Networking</li>
       <li>Microsoft Office / Google Workspace</li>
       <li>Communication & Collaboration</li>
-      <li>Python</li>
+    </ul>
+  </section>
+
+  <section id="tools">
+    <h2>Tools I’ve Used</h2>
+    <ul class="tools-list">
+      <li><i class='bx bxl-github'></i> GitHub</li>
+      <li><i class='bx bxl-visual-studio'></i> Visual Studio Code</li>
+      <li><i class='bx bxl-unity'></i> Unity</li>
+      <li><i class='bx bxl-android'></i> Android Studio</li>
+      <li><i class='bx bxl-postgresql'></i> PostgreSQL</li>
+      <li><i class='bx bxl-microsoft'></i> Microsoft Excel</li>
+      <li><i class='bx bxl-chrome'></i> Chrome DevTools</li>
+      <li><i class='bx bx-paint'></i> Canva</li>
+      <li><i class='bx bx-notepad'></i> Notion</li>
     </ul>
   </section>
 
@@ -397,42 +400,40 @@ body.light .theme-toggle {
       <h3>Fun Fruit Crush (Android Game)</h3>
       <p>
         Thesis project titled <em>“Implementasi Algoritma Fisher-Yates Shuffle dalam Penyelesaian Game Fun Fruit Crush Berbasis Android”</em>.
-        This game applies the Fisher-Yates algorithm to generate a fair and efficient random arrangement of elements. The results include a p-value to evaluate the fairness of the element distribution, a runs test to measure the randomness of the generated elements, and a heatmap visualization to represent the distribution pattern.
+        This game applies the Fisher-Yates algorithm to generate a fair and efficient random arrangement of elements. The results include a p-value to evaluate the fairness of the element distribution, a runs test to measure randomness, and a heatmap visualization to represent the pattern.
       </p>
-      <a href="https://github.com/AudryRaihan/Fun-Fruit"> https://github.com/AudryRaihan/Fun-Fruit</a>
-      <p>
-        
-      </p>
+      <a href="https://github.com/AudryRaihan/Fun-Fruit">https://github.com/AudryRaihan/Fun-Fruit</a>
     </div>
+
     <div class="project-card">
-      <h3>Bussines Analyst Intern</h3>
+      <h3>Business Analyst Intern</h3>
       <p>
-        Successfully contributed to department-wide digital transformation initiative, improving academic service processes through systematic analysis and documentation.Conducted comprehensive user requirements analysis and business process evaluation for academic service digitization initiatives. Created detailed process flow models using BPMN methodology. Designed system blueprints and documentation using draw.io for use cases, activity diagrams, and class structures. Collaborated directly with development teams to document workflows and digital solution architectures. Managed project documentation and task coordination using Wekan collaborative platform.
-      </p>
-      
-      <p>
-        
+        Contributed to academic service digital transformation by analyzing business processes, modeling workflows (BPMN), and creating detailed documentation using draw.io and Wekan. Collaborated with development teams to design system blueprints and improve efficiency.
       </p>
     </div>
   </section>
 
-<section id="contact">
-  <h2>Contact</h2>
+<section id="contact" class="fade-in">
+  <h2>Let's Connect</h2>
   <div class="contact-icons">
     <a href="mailto:audrycalista95@gmail.com" target="_blank" aria-label="Email">
-      <i class='bx bxs-envelope'></i>
+      <i class='bx bxl-gmail'></i>
     </a>
     <a href="https://linkedin.com/in/audry-raihan" target="_blank" aria-label="LinkedIn">
-      <i class='bx bxl-linkedin-square'></i>
+      <i class='bx bxl-linkedin'></i>
     </a>
     <a href="https://wa.me/628976066903" target="_blank" aria-label="WhatsApp">
-      <i class='bx bxl-whatsapp-square'></i>
+      <i class='bx bxl-whatsapp'></i>
+    </a>
+    <a href="https://facebook.com/audryraihan" target="_blank" aria-label="Facebook">
+      <i class='bx bxl-facebook'></i>
     </a>
   </div>
 </section>
 
 
   <script>
+    // === Dark/Light Mode ===
     const toggle = document.getElementById("themeToggle");
     const body = document.body;
 
@@ -443,25 +444,40 @@ body.light .theme-toggle {
       localStorage.setItem("theme", isLight ? "light" : "dark");
     });
 
-    // Remember user’s theme
     if (localStorage.getItem("theme") === "light") {
       body.classList.add("light");
       toggle.textContent = "🌞";
     }
 
-const sections = document.querySelectorAll("section");
+    // === Scroll Animation ===
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, {
+    sections.forEach((section) => observer.observe(section));
+
+    const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
     threshold: 0.2
-  });
+  };
 
-  sections.forEach((section) => observer.observe(section));
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
   </script>
 </body>
 </html>
