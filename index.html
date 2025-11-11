@@ -6,318 +6,360 @@
   <title>Portofolio Audry Raihan</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style>
-    * {
+    *{
       scroll-behavior: smooth;
       scroll-padding-top: 70px;
     }
-    :root {
-      --bg-color: #0f172a;
-      --text-color: #e2e8f0;
-      --accent-color: #38bdf8;
-      --card-bg: #1e293b;
-      --transition: 0.3s ease;
-    }
+   :root {
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --accent-color: #38bdf8;
+    --card-bg: #1e293b;
+    --transition: 0.3s ease;
+  }
 
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      margin: 0;
-      transition: background var(--transition), color var(--transition);
-    }
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    transition: background var(--transition), color var(--transition);
+  }
 
-    section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
+  /* === Scroll Animation === */
+  section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
+  #about.visible { transition-delay: 0.1s; }
+  #skills.visible { transition-delay: 0.3s; }
+  #tools.visible { transition-delay: 0.4s; }
+  #projects.visible { transition-delay: 0.5s; }
+  #contact.visible { transition-delay: 0.7s; }
+
+  /* ================= HEADER ================= */
+  header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  animation: fadeIn 1.5s ease;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header .tagline {
+    font-size: 1rem;
+    color: #94a3b8;
+  }
+
+  #avatar {
+    flex-shrink: 0;
+    width: 160px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+
+  #foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding: 0.8rem 1.4rem;
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .download-btn i {
+    font-size: 1.2rem;
+  }
+
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+
+  /* ================= NAVBAR ================= */
+  nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: rgba(30, 41, 59, 0.8);
+  padding: 0.8rem 0;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  }
+
+  nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+
+  nav a:hover {
+    color: var(--accent-color);
+  }
+
+  #about {
+  margin-top: 80px;
+}
+
+  /* ================= CONTENT ================= */
+  section {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 0.7rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  p, li {
+    color: #cbd5e1;
+    text-align: justify;
+  }
+
+  /* ================= SKILLS ================= */
+  .skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .skills-list li {
+    background: var(--card-bg);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform var(--transition);
+  }
+
+  .skills-list li:hover {
+    transform: translateY(-3px);
+  }
+
+  /* ================= TOOLS ================= */
+  .tools-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .tools-list li {
+    background: var(--card-bg);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .tools-list li i {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+  }
+
+  .tools-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+
+  /* ================= PROJECTS ================= */
+  .project-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform var(--transition);
+  }
+
+  .project-card:hover {
+    transform: scale(1.02);
+  }
+
+  .project-card a{
+    color: #38bdf8;
+  }
+
+  /* ================= CONTACT ================= */
+  #contact {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  font-size: 3rem;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.contact-icons a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+/* Animasi fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  .bxs-envelope { color: #EA4335; }
+  .bxl-linkedin-square { color: #0A66C2; }
+  .bxl-whatsapp-square { color: #25D366; }
+
+  /* ================= TOGGLE ================= */
+  .theme-toggle {
+    position: fixed;
+    z-index: 99;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+  }
+
+  .theme-toggle:hover {
+    background: #334155;
+  }
+
+  /* ================= LIGHT MODE ================= */
+  body.light {
+    --bg-color: #f9fafb;
+    --text-color: #0f172a;
+    --accent-color: #2563eb;
+    --card-bg: #e2e8f0;
+  }
+
+  body.light p,
+  body.light li {
+    color: #1f2937;
+  }
+
+  body.light nav {
+    background: rgba(226, 232, 240, 0.9);
+  }
+
+  body.light .theme-toggle {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  body.light .tools-list li {
+    background: #e2e8f0;
+    color: #1f2937;
+  }
+
+  body.light .tools-list li i {
+    color: #2563eb;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 768px) {
     header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      animation: fadeIn 1.5s ease;
+      flex-direction: column;
+      gap: 1.5rem;
     }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header .tagline {
-      font-size: 1rem;
-      color: #94a3b8;
-    }
-
     #avatar {
-      flex-shrink: 0;
-      width: 160px;
-      height: 200px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: 140px;
+      height: 180px;
     }
+  }
 
-    #foto {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
 
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
-      padding: 0.8rem 1.4rem;
-      background: var(--accent-color);
-      color: #fff;
-      font-weight: 500;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
+  #chatbot-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    font-size: 1.5rem;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-    .download-btn i {
-      font-size: 1.2rem;
-    }
-
-    .download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 10px var(--accent-color);
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: rgba(30, 41, 59, 0.8);
-      padding: 0.8rem 0;
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(6px);
-      z-index: 10;
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color var(--transition);
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    section {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    h2 {
-      border-left: 4px solid var(--accent-color);
-      padding-left: 0.7rem;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    p, li {
-      color: #cbd5e1;
-      text-align: justify;
-    }
-
-    .skills-list {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.8rem;
-    }
-
-    .skills-list li {
-      background: var(--card-bg);
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      text-align: center;
-      transition: transform var(--transition);
-    }
-
-    .skills-list li:hover {
-      transform: translateY(-3px);
-    }
-
-    .tools-list {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-    }
-
-    .tools-list li {
-      background: var(--card-bg);
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      text-align: center;
-      color: var(--text-color);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .tools-list li i {
-      font-size: 1.4rem;
-      color: var(--accent-color);
-    }
-
-    .tools-list li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 10px var(--accent-color);
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-top: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      transition: transform var(--transition);
-    }
-
-    .project-card:hover {
-      transform: scale(1.02);
-    }
-
-    .project-card a {
-      color: #38bdf8;
-    }
-
-    #contact {
-      text-align: left;
-      margin-top: 2rem;
-    }
-
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .contact-icons a {
-      font-size: 3rem;
-      color: var(--text-color);
-      transition: var(--transition);
-    }
-
-    .contact-icons a:hover {
-      color: var(--accent-color);
-      transform: scale(1.2);
-    }
-
-    .bxl-gmail { color: #EA4335; }
-    .bxl-linkedin { color: #0A66C2; }
-    .bxl-whatsapp { color: #25D366; }
-    .bxl-facebook { color: #1877F2; }
-
-    .theme-toggle {
-      position: fixed;
-      z-index: 99;
-      top: 1rem;
-      right: 1rem;
-      background: var(--card-bg);
-      color: var(--text-color);
-      border: none;
-      border-radius: 50%;
-      width: 42px;
-      height: 42px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background var(--transition), color var(--transition);
-    }
-
-    .theme-toggle:hover {
-      background: #334155;
-    }
-
-    body.light {
-      --bg-color: #f9fafb;
-      --text-color: #0f172a;
-      --accent-color: #2563eb;
-      --card-bg: #e2e8f0;
-    }
-
-    body.light p,
-    body.light li {
-      color: #1f2937;
-    }
-
-    body.light nav {
-      background: rgba(226, 232, 240, 0.9);
-    }
-
-    body.light .theme-toggle {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-      #avatar {
-        width: 140px;
-        height: 180px;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    /* === Chatbot bubble === */
-    #chatbot-bubble {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--accent-color);
-      color: white;
-      font-size: 1.5rem;
-      width: 55px;
-      height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 10000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    #chatbot-bubble:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px var(--accent-color);
-    }
+  #chatbot-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--accent-color);
+  }
   </style>
 </head>
+
 
 <body>
   <button class="theme-toggle" id="themeToggle" title="Ganti mode">🌙</button>
@@ -343,7 +385,7 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m a graduate in Informatics Engineering from UIN Bandung with an interest in various non-coding roles within the IT field. I have strong analytical, communication, and attention-to-detail skills, and I’m committed to continuous learning and professional growth in technology.
+      I’m a graduate in Informatics Engineering from UIN Bandung with an interest in various non-coding roles within the IT field. I have strong analytical, communication, and attention-to-detail skills, and I’m committed to continuous learning and professional growth in technology. Experienced in business process analysis, process modeling (BPMN, UML), manual testing, and project documentation. Detail-oriented, adaptable, and eager to grow in non-coding IT roles such as IT Support, Technical Writer, Data Analyst, and similar fields.
     </p>
     <a href="assets/Resume Audry Raihan.pdf" download class="download-btn">
       <i class='bx bx-download'></i> Download Resume
@@ -382,6 +424,7 @@
       <h3>Fun Fruit Crush (Android Game)</h3>
       <p>
         Thesis project titled <em>“Implementasi Algoritma Fisher-Yates Shuffle dalam Penyelesaian Game Fun Fruit Crush Berbasis Android”</em>.
+        This game applies the Fisher-Yates algorithm to generate a fair and efficient random arrangement of elements. The results include a p-value to evaluate the fairness of the element distribution, a runs test to measure randomness, and a heatmap visualization to represent the pattern.
       </p>
       <a href="https://github.com/AudryRaihan/Fun-Fruit">https://github.com/AudryRaihan/Fun-Fruit</a>
     </div>
@@ -389,64 +432,67 @@
     <div class="project-card">
       <h3>Business Analyst Intern</h3>
       <p>
-        Contributed to academic service digital transformation by analyzing business processes, modeling workflows (BPMN), and creating detailed documentation using draw.io and Wekan.
+        Contributed to academic service digital transformation by analyzing business processes, modeling workflows (BPMN), and creating detailed documentation using draw.io and Wekan. Collaborated with development teams to design system blueprints and improve efficiency.
       </p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Let's Connect</h2>
-    <div class="contact-icons">
-      <a href="mailto:audrycalista95@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
-      <a href="https://linkedin.com/in/audry-raihan" target="_blank"><i class='bx bxl-linkedin'></i></a>
-      <a href="https://wa.me/628976066903" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-      <a href="https://facebook.com/audryraihan" target="_blank"><i class='bx bxl-facebook'></i></a>
-    </div>
-  </section>
-
-  <!-- === Chatbot Bubble (Chatbase Embed) === -->
-  <div id="chatbot-bubble">💬</div>
-  <iframe
-    id="chatbot-frame"
-    src="https://www.chatbase.co/chatbot-iframe/yk4j9MPMGkUaV-kh1HW9V"
-    style="
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 350px;
-      height: 500px;
-      border: none;
-      display: none;
-      opacity: 0;
-      z-index: 9999;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: opacity 0.4s ease;">
-  </iframe>
+<section id="contact" class="fade-in">
+  <h2>Let's Connect</h2>
+  <div class="contact-icons">
+    <a href="mailto:audrycalista95@gmail.com" target="_blank" aria-label="Email">
+      <i class='bx bxl-gmail'></i>
+    </a>
+    <a href="https://linkedin.com/in/audry-raihan" target="_blank" aria-label="LinkedIn">
+      <i class='bx bxl-linkedin'></i>
+    </a>
+    <a href="https://wa.me/628976066903" target="_blank" aria-label="WhatsApp">
+      <i class='bx bxl-whatsapp'></i>
+    </a>
+    <a href="https://facebook.com/audryraihan" target="_blank" aria-label="Facebook">
+      <i class='bx bxl-facebook'></i>
+    </a>
+  </div>
+</section>
 
   <script>
-    // === Theme Toggle ===
-    const toggle = document.getElementById("themeToggle");
-    const body = document.body;
+    // === Dark/Light Mode ===
+  const toggle = document.getElementById("themeToggle");
+  const body = document.body;
 
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("light");
-      const isLight = body.classList.contains("light");
-      toggle.textContent = isLight ? "🌞" : "🌙";
-      localStorage.setItem("theme", isLight ? "light" : "dark");
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("light");
+    const isLight = body.classList.contains("light");
+    toggle.textContent = isLight ? "🌞" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  });
+
+  if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light");
+    toggle.textContent = "🌞";
+  }
+
+  // === Scroll Animation ===
+  const sections = document.querySelectorAll("section");
+  const revealOnScroll = () => {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add("visible");
+      }
     });
+  };
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
 
-    if (localStorage.getItem("theme") === "light") {
-      body.classList.add("light");
-      toggle.textContent = "🌞";
-    }
-
-    // === Chatbot Toggle ===
+  // === Chatbot Toggle ===
+  window.addEventListener("DOMContentLoaded", () => {
     const chatbotBubble = document.getElementById("chatbot-bubble");
     const chatbotFrame = document.getElementById("chatbot-frame");
 
     chatbotBubble.addEventListener("click", () => {
       const isVisible = chatbotFrame.style.display === "block";
+
       if (isVisible) {
         chatbotFrame.style.opacity = "0";
         setTimeout(() => chatbotFrame.style.display = "none", 300);
@@ -455,6 +501,30 @@
         setTimeout(() => chatbotFrame.style.opacity = "1", 50);
       }
     });
+  });
   </script>
+
+  <!-- === Chatbot Bubble (Chatbase Embed) === -->
+<div id="chatbot-bubble">
+  💬
+</div>
+
+<iframe
+id="chatbot-frame"
+  src="https://www.chatbase.co/chatbot-iframe/yk4j9MPMGkUaV-kh1HW9V"
+  style="
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    border: none;
+    display: none;
+    opacity: 0;
+    z-index: 9999;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.4s ease;">
+</iframe>
 </body>
 </html>
